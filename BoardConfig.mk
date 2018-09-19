@@ -14,7 +14,7 @@ TARGET_CPU_VARIANT := generic
 TARGET_CPU_SMP := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32S1,32S1 androidboot.selinux=permissive androidboot.configfs=true
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32S1,32S1 androidboot.configfs=true androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x15000000 --second_offset 0x00f00000 --tags_offset 0x14000000
@@ -34,7 +34,10 @@ BOARD_USES_MMCUTILS := true
 BOARD_RECOVERY_SWIPE := true
 
 # TWRP Build Flags
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_THEME := portrait_hdpi
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 178
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 #TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
