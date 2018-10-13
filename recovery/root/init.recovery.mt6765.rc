@@ -1,0 +1,4 @@
+on init
+    # symlink bootdevice path
+    wait /dev/block/platform/bootdevice
+    symlink /dev/block/platform/bootdevice /dev/block/bootdevice
